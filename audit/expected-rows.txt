@@ -1,0 +1,3 @@
+order=7516 negative=28241370 diagonal=7516 unordered_distinct_row_pairs=28241370 distance=3758 off_diagonal_gram=0
+order=14556 negative=105931290 diagonal=14556 unordered_distinct_row_pairs=105931290 distance=7278 off_diagonal_gram=0
+order=16012 negative=128184066 diagonal=16012 unordered_distinct_row_pairs=128184066 distance=8006 off_diagonal_gram=0

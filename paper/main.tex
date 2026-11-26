@@ -1,0 +1,188 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue]{hyperref}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\pdftrailerid{}
+\setlength{\emergencystretch}{2em}
+\title{Hadamard matrices of orders 7516, 14556 and 16012}
+\author{Jeffery Kline}
+\date{November 25, 2026\\[3pt]\small Version 0.1.0, release candidate}
+\begin{document}
+\maketitle
+\begin{abstract}
+We construct real Hadamard matrices of orders 7516, 14556 and 16012 and verify every row inner product in all three. At order 7516, a change to two blocks in Seberry and Yamada's construction gives a weighing matrix of order 1880 and weight 1878. A skew conference core and a Paley matrix in quaternion block form extend the construction and give a weighing matrix of order 3640 and weight 3638 for order 14556. A binary Golay pair of length 1000 supplies the weighing input at order 16012. The 2026 survey of Egan, Kotsireas, London and \'O Cath\'ain lists 7516 as open. Historical priority at 14556 and 16012 remains unresolved. Four further orders follow by theorem, at 30068, 58228, 64012 and 80092.
+\end{abstract}
+
+\section{Introduction}
+
+A real Hadamard matrix of order $h$ is an $h\times h$ sign matrix with $HH^T=hI_h$. We construct such matrices at orders 7516, 14556 and 16012, and check every entry and row inner product of each stored matrix. All three constructions use the same earlier theorem~\cite{transfer}: if $q$ is prime and $q\equiv1\pmod4$, a real weighing matrix of order $q+3$ and weight $q+1$ gives a real Hadamard matrix of order $4(q+2)$. A weighing matrix $W(N,w)$ is an $N\times N$ matrix with entries in $\{0,1,-1\}$ and $WW^T=wI_N$.
+
+For 7516, we construct the input by replacing two blocks in Seberry and Yamada's 1992 array~\cite{sy}. For 14556, a skew conference core and a Paley matrix in quaternion block form extend that construction. For 16012, we use the Golay case of Gysin and Seberry's 1995 construction~\cite{gs}. The survey of Egan, Kotsireas, London and \'O Cath\'ain~\cite{survey} lists 7516 as open. Historical priority at 14556 and 16012 remains unresolved. The constructions also give four further orders by theorem. The packed matrices were recorded on the morning of November 25, 2026, in Chicago.
+
+\section{Removing two diagonal signs per row}
+
+\noindent\textbf{Theorem.}
+Suppose a real symmetric conference matrix of order $n+1$ exists and there are four pairwise commuting symmetric sign matrices $B_1,\dots,B_4$ of order $n$ satisfying $\sum_{i=1}^4 B_i^2=4nI_n$. Then there exists a real $W(16n+8,16n+6)$. If $16n+5$ is prime, there exists a real Hadamard matrix of order $64n+28$.
+
+\smallskip
+\noindent\textit{Proof.}
+A real symmetric conference matrix has zero diagonal and signs off the diagonal, and its square is $nI_{n+1}$. Conjugate by a diagonal sign matrix to make the first row and column positive away from the diagonal. The remaining core $Q$ has zero diagonal, $Q\mathbf 1_n=0$ and $Q^2=nI_n-J_n$, where $J_k$ is the $k\times k$ all-ones matrix.
+
+Set $m=2n+1$, $P=2I_2-J_2$, and write the symmetric blocks in Seberry and Yamada's Lemma 8.12 and Corollary 8.15~\cite{sy} as
+\[
+ X(b,r,U,V)=
+ \begin{pmatrix}
+ b & r\mathbf 1_{2n}^T\\
+ r\mathbf 1_{2n} & U\otimes J_2+V\otimes P
+ \end{pmatrix}.
+\]
+Here the notation $(b,r,U,V)$ gives the four arguments of $X$.
+\[
+\begin{array}{ccl}
+\toprule
+\text{Index} & \text{Original} & \text{After substitution}\\
+\midrule
+1 &(1,-1,I+Q,0)&\text{same}\\
+2 &(1,-1,I-Q,0)&(0,1,Q-I/2,I/2)\\
+3 &(1,1,Q,I)&\text{same}\\
+4 &(1,1,Q,I)&(0,1,Q-I/2,I/2)\\
+4+i &(1,1,0,B_i)&\text{same}\quad (1\le i\le 4)\\
+\bottomrule
+\end{array}
+\]
+To check commutation and the squared sum, split the space into three invariant subspaces. On coordinates antisymmetric within each pair, the blocks act as $2V$ and their squared sum is $(16n+8)I$.
+
+On pair-constant coordinates perpendicular to the all-ones vector they act as $2U$ with squared sum $8(I+2Q^2)=(16n+8)I$. The operators commute on each of these two subspaces.
+
+On the plane spanned by the border and the all-ones vector of the remaining coordinates, the blocks are of the form $2uI_2+rT$, where $u$ is the row sum of $U$ and
+\[
+ T=\begin{pmatrix}1&\sqrt{2n}\\\sqrt{2n}&0\end{pmatrix}.
+\]
+Indeed $b-2u=r$ in every original block. The two blocks with $r=-1$ have $2u=2$, and the other six have $2u=0$ and $r=1$. As $T^2=T+2nI_2$, the squared sum is $2(2I_2-T)^2+6T^2=(16n+8)I_2$.
+
+The identity $J_2+P=2I_2$ gives $X_2+X_4=2I_m$, since their off-diagonal borders cancel. Put $A=X_4-I_m=I_m-X_2$. The matrix $A$ has zero diagonal and signs elsewhere. It commutes with the other blocks because it is a scalar translate of $X_4$. Replace both $X_2$ and $X_4$ by $A$. The squared sum drops by
+\[
+ (I_m-A)^2+(I_m+A)^2-2A^2=2I_m.
+\]
+In the order-eight orthogonal design used in the original construction, each variable occurs once with a sign in each row and column. Its coefficient matrices $E_i$ satisfy $E_iE_i^T=I_8$ and $E_iE_j^T+E_jE_i^T=0$ for $i\ne j$. Under substitution of symmetric commuting blocks $X'_i$, the mixed terms in the row Gram of $\sum_i E_i\otimes X'_i$ therefore cancel. The disjoint supports of the $E_i$ preserve the entries in $\{0,1,-1\}$. The row Gram is $(8m-2)I_{8m}$, giving the claimed weighing matrix. With $q=16n+5$, the transfer applies with input order $q+3$ and weight $q+1$ and gives order $64n+28$.\hfill$\square$
+
+\section{Orders 7516 and 16012}
+
+\paragraph{Order 7516.}
+Take $n=117$. A symmetric conference matrix of order 118 was previously known. Kumar credits J.~Y.~Z. Ho with its existence and supplies the explicit seed used here~\cite{kumar}. For the other input use Yamada's symmetric circulants $M,N$ of order 117 from the prime 233~\cite{yamada}. They satisfy $M^2+N^2=233I$, with $M$ zero on the diagonal and signs elsewhere and $N$ a full sign matrix. The symmetric sign circulants $M+I,M-I,N,N$ commute and have squared sum $2(M^2+N^2)+2I=468I$. The theorem now gives $W(1880,1878)$ and, at the prime $q=1877$, $H(7516)$.
+
+\paragraph{Order 16012.}
+A binary Golay pair consists of two finite sign sequences whose aperiodic autocorrelations sum to zero at every nonzero shift. We use the following binary Golay pair of length ten:
+\[
+ \texttt{++-+-+--++},\qquad \texttt{++-+++++--}.
+\]
+Their autocorrelations give the complementary identity directly. Three copies combined by Turyn's product~\cite{turyn} give a pair of length $g=10^3$. For the resulting polynomials $U,V$, write $\mathcal N(F)=F(z)F(z^{-1})$. The identity is $\mathcal N(U)+\mathcal N(V)=2g$. The four words of length $g+1$ given by $U+z^g,U-z^g,V,V$, with the last two padded by zero, have summed norm $4g+2$. Evaluating at the cyclic shift and using the Goethals--Seidel array is the first case of Gysin and Seberry's Theorem 7~\cite{gs}. It yields $W(4004,4002)$. Here $q=4001$ is prime, so the transfer gives $H(16012)$.
+
+\paragraph{Two further orders.}
+Miyamoto's theorem~\cite{miyamoto} takes a Hadamard matrix of order $q-1$ to one of order $4q$ when $q\equiv1\pmod4$ is a prime power. Applying it with prime $q=7517$ gives order 30068. The same Golay construction used at 16012 gives order 64012 from length $4000=2^2\cdot10^3$ and prime $q=16001$. These two orders follow from the stated theorems.
+
+\section{Quaternion blocks and a skew conference core}
+\label{sec:quaternion}
+
+The same array can use a skew core and requires only one Hadamard identity for the four blocks $B_i$. Keep the block order of the preceding proof, but number the four blocks containing the $B_i$ by $0,1,2,3$, and the remaining blocks by $4,5,6,7$ in the order $X_1,X_3,A,A$. Use the octonion table with basis $e_0=1,e_1,\ldots,e_7$, squares $e_i^2=-1$ for $i>0$, and cyclic oriented triples
+\[
+ (1,2,3),\ (1,4,5),\ (1,7,6),\ (2,4,6),\ (2,5,7),\ (3,4,7),\ (3,6,5).
+\]
+In a triple $(i,j,k)$, $e_i e_j=e_k$, and reversing factors negates the product. Column $j$ of the signed variable array comes from $(\sum_{i=0}^7 x_i e_i)e_j$. The octonion norm identity gives the row Gram $(\sum_i x_i^2)I_8$. This convention fixes the orientation in both four-by-four diagonal squares.
+
+\medskip
+\noindent\textbf{Theorem.}
+Let $Q$ be an order-$n$ matrix with zero diagonal, signs elsewhere, zero row and column sums, and $QQ^T=nI-J$. Suppose $Q^T=Q$ or $Q^T=-Q$. Write $L_i$ and $R_i$ for the coefficient matrices of $x_i$ in the upper and lower diagonal squares of the octonion table for $0\le i\le3$. Suppose $M=\sum_{i=0}^3 L_i\otimes B_i$ is a Hadamard matrix, where the $B_i$ are sign matrices of order $n$. Then there exists $W(16n+8,16n+6)$, and if $16n+5$ is prime, there exists $H(64n+28)$.
+
+\medskip
+\noindent\textit{Proof.}
+Use $X(1,1,0,B_i)$ in each upper diagonal cell with variable $i$, and transpose $B_i$ in the lower diagonal square. The signed variables still determine the borders and identity terms of all cells. In the symmetric case retain their signs on $Q$ as well. In the skew case replace just the signs of $Q$ in the two off-diagonal squares by these rows:
+\[
+\begin{array}{c|rrrr}
+ & 1 & 2 & 3 & 4\\
+\text{upper} & \texttt{----} & \texttt{+-+-} & \texttt{++--} & \texttt{+--+}\\
+\text{lower} & \texttt{----} & \texttt{+--+} & \texttt{+-+-} & \texttt{++--}
+\end{array}
+\]
+Each string of four signs gives one row of the corresponding square. The construction gives ternary entries because the $Q$ and identity terms have disjoint supports, and the two copies of $A$ retain their zero diagonal.
+
+The border plane and the two subspaces for the paired coordinates used in the previous proof are preserved by the blocks and their transposes. On the border plane of each cell the $Q$ and $B_i$ terms disappear. The eight scalar matrices there have the previous squared sum $(16n+6)I_2$ and commute, so the row Gram of the whole substitution on those planes is scalar. On pair constants perpendicular to the all-ones vector, the diagonal squares vanish. Each off-diagonal square is $2S\otimes Q+T\otimes I$, where $S$ gives the signs of $Q$ and $T$ comes from substituting $(2,0,-1,-1)$ for variables $4,5,6,7$ in the indicated square. In the symmetric case the octonion identity cancels the mixed terms as in the previous proof. In the skew case the two sign tables above satisfy $SS^T=4I$, $TT^T=6I$ and $ST^T=TS^T$ by multiplication. The mixed terms then cancel by $Q^T=-Q$. The Gram on this subspace is $(16n+6)I$.
+
+On within-pair differences the diagonal squares act as $2M$ and $2K$, where $K=(D\otimes I)M^T(D\otimes I)$ and $D=\mathrm{diag}(1,-1,-1,-1)$. Indeed the signed table gives $R_i=DL_i^TD$. Write the off-diagonal squares on this subspace as $F\otimes I$ and $G\otimes I$, with $F,G$ obtained from $(0,2,1,1)$ on the same four variables. The octonion identity gives $FF^T=GG^T=6I$ and $L_iG^T+FR_i^T=0$ for each $i$. Hence the mixed block of the Gram is $2\sum_i(L_iG^T+FR_i^T)\otimes B_i=0$. Both $2M$ and $2K$ have row Gram $16nI$. The three subspaces together give $W(16n+8,16n+6)$, and the final order follows from the weighing transfer.\hfill$\square$
+
+\subsection{The Paley input and order 14556}
+
+For an odd prime power $p=4n-1$, use one vector $v_i$ for each projective line over $\mathbb F_p$. With $\chi$ the quadratic character, extended by $\chi(0)=0$, the Paley matrix has entries
+\[
+ H_{ij}=\delta_{ij}+\chi(\det(v_i,v_j)).
+\]
+The character matrix is skew since $p\equiv3\pmod4$. Distinct projective lines give independent determinant forms, so the sum of their character product over nonzero vectors is zero. This sum counts each projective contribution $p-1$ times. The diagonal row norms of the character matrix are $p$, proving $HH^T=(p+1)I$.
+
+The quaternion symmetry is classical~\cite{kantor,quaternion}. A determinant-one linear map acts on the chosen projective representatives by a signed permutation, with signs given by the character of the scalar relating representatives. This action preserves $H$. Let $J(x,y)=(y,-x)$ and $K(x,y)=(ax+by,bx-ay)$ with $a^2+b^2=-1$. Such $a,b$ exist by surjectivity of the norm from $\mathbb F_{p^2}$. The maps square to $-I$ and anticommute. Their projective action has orbits of size four since a noncentral element squares to $-I$, which has no square root among the base-field scalars. Order each orbit by $v,-Jv,-Kv,-JKv$. The signed actions on those four positions generate quaternion right multiplications. A four-by-four block intertwining these actions is left multiplication by a quaternion, determined by its first column. Its four coefficients are therefore signs. Ordering first by quaternion coordinate and then by orbit gives $H=\sum_{i=0}^3 L_i\otimes B_i$ with the $L_i$ above.
+
+At $n=227$, use $Q_{xy}=\chi_{227}(y-x)$ and the Paley input at $p=907$. For the latter take $(a,b)=(1,173)$ and visit lines in the order $(k,1)$ for $0\le k<907$, then $(1,0)$, skipping previously visited orbits. The generator verifies all $908^2$ Paley entries against the quaternion blocks. This supplies $W(3640,3638)$, and the transfer at prime 3637 gives order 14556. For its Yamada pair the builder uses the quadratic extension $w^2=2$ at 3637 and the generator $4+w$.
+
+The symmetric branch also gives order 7516 from the same conference seed of order 118 and the Paley input at 467, now with $(a,b)=(1,126)$. The two packed outputs at 7516 have different digests. Their equivalence under signed row and column permutations remains untested.
+
+\subsection{Two further consequences}
+
+Miyamoto's theorem gives order 58228 from 14556, since $14557$ is prime and $14557\equiv1\pmod4$. For order 80092 take $n=1251$. Karoui's skew Hadamard matrix of order 1252~\cite{karoui} gives the skew conference core by subtracting the identity and normalizing the first row. The accompanying input check uses $\mathbb F_5[t]/(t^4-t^2-t-2)$, with $t$ of multiplicative order 624. The two sign words have negative entries at nonzero elements whose exponents modulo 16 lie in $\{4,\ldots,11\}$ and $\{0,\ldots,7\}$, respectively. The check confirms skewness of the first word off zero and a summed periodic autocorrelation of $-2$ at each of the 624 nonzero shifts. The two group-developed matrices $A,B$ have row and column sums 1, commute, and satisfy $AA^T+BB^T=1252I-2J$. Border each by a leading 1, a row of ones, and a column of minus ones to obtain $\widehat A,\widehat B$. Their borders preserve commutation and add $2J$ to the lower Gram sum. The bordered matrices are normal and commute. Their row Grams sum to $1252I$, and $\widehat A+\widehat A^T=2I$. Hence the following matrix is skew Hadamard:
+\[
+ \begin{pmatrix}
+ \widehat A & \widehat B\\
+ -\widehat B^T & \widehat A^T
+ \end{pmatrix}.
+\]
+The Paley input at $5003=4n-1$ and the transfer prime $20021=16n+5$ then give order 80092. The orders 58228 and 80092 are theorem consequences.
+
+\section{Earlier work and priority}
+
+Egan, Kotsireas, London and \'O Cath\'ain list $1879$ in their table of open orders $4p$, and version 60 of the Math74 catalogue still lists 7516 directly~\cite{survey,math74}. Kumar lists the same target and identifies a skew Hadamard matrix or a quaternary conference matrix of order 940 as sufficient~\cite{kumar}. Seberry and Balonin's propus construction~\cite{propus} connects ingredients of the kind used here to symmetric Hadamard order 940. Gysin and Seberry's Table 6 has a blank construction cell at $q=470$, their parameter for $W(1880,1878)$. The present substitution supplies this weighing matrix. The sources examined contain no earlier construction at 7516.
+
+For 14556 the Math74 catalogue and Kumar's frozen frontier stop below the target. An older construction at the same odd part gives 29112. Seberry and Yamada give symmetric Williamson-type matrices of order 101~\cite[Corollary~29 and Remark~30]{sy90}. Combining these with length-3 T-sequences by Cooper--Wallis gives order 1212. Miyamoto at prime 1213 gives 4852, and the Agaian product with an order-12 matrix gives 29112~\cite{mathrules}. Xia, Xia and Seberry also give a Goethals--Seidel input at block size 227~\cite{xxs}. The construction here uses the quaternion symmetry of Paley I. The sources examined contain no earlier construction at 14556. Seberry and Yamada list two sufficient inputs for Williamson-type matrices of order 1213, namely Williamson-type matrices of order 303 or a symmetric conference matrix of order 606. Historical priority at 14556 remains unresolved.
+
+For 16012 the construction is an explicit instance of the previously published Golay corollary~\cite{transfer}. Math74's catalogue ends at order 10000. Craigen, Holzmann and Kharaghani's Corollary 16 produces order $8(4000+3)=32024$ from binary Golay length 4000 and complex Golay length 3~\cite{chk}. An earlier witness at 16012 was not located in the sources examined. The entry for odd part 4003 in the 2006 \emph{Handbook of Combinatorial Designs} (Table 1.53) could not be verified from the available preview. The detailed hypotheses of the special T-matrix cases of Lou, Xia and Xia~\cite{lou} also remain unchecked. The same Golay corollary in the November 24 release also implies 64012. The older Corollary 16 gives 128024 at the same odd part from lengths 16000 and 3. Priority before that release remains unresolved for 16012 and 64012. Historical priority at 30068, 58228 and 80092 also remains unresolved.
+
+\section{Exact verification}
+
+The three principal matrices are stored as row-major packed signs. A set bit means $-1$ and a clear bit means $+1$. Rows start at byte boundaries, columns are ordered from the most to the least significant bit, and the four padding bits at the end of each row are zero. Separate verifiers read the files, check length and padding, and compute every distinct row-pair Hamming distance by XOR and population count. In order $h$, squared row norms equal $h$ and a row pair at distance $d$ has inner product $h-2d$.
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+Order & Packed bytes & Distinct row pairs & Distance for every pair\\
+\midrule
+7516 & 7,065,040 & 28,241,370 & 3758\\
+14556 & 26,491,920 & 105,931,290 & 7278\\
+16012 & 32,056,024 & 128,184,066 & 8006\\
+\bottomrule
+\end{tabular}
+\end{center}
+The certificate records give the file digests and the commands to check or regenerate all three principal witnesses. The 7516 and 14556 generators also check the whole row Gram of their intermediate weighing matrices. The further orders 30068, 58228, 64012 and 80092 follow from the theorems.
+
+\section*{Role of AI}
+AI assisted the derivations, the computer verification, the literature search and the exposition under the author's direction. The supporting records document separate AI checks of the block identities and the matrix certificates. Independent expert peer review remains outstanding.
+
+\begin{thebibliography}{99}
+\setlength{\itemsep}{0pt}
+\bibitem{sy} J. Seberry and M. Yamada, \href{https://documents.uow.edu.au/~jennie/WEBPDF/175_1992.pdf}{Hadamard matrices, sequences, and block designs}, in \emph{Contemporary Design Theory}, Wiley, 1992, 431--560.
+\bibitem{gs} M. Gysin and J. Seberry, \href{https://ajc.maths.uq.edu.au/pdf/12/ocr-ajc-v12-p157.pdf}{On the weighing matrices of order $4n$ and weight $4n-2$ and $2n-1$}, \emph{Australasian Journal of Combinatorics} \textbf{12} (1995), 157--174.
+\bibitem{transfer} J. Kline, \href{https://doi.org/10.5281/zenodo.24519197}{Hadamard matrices of orders 5164 and 8332 from real weighing matrices}, version 0.1.0, 2026.
+\bibitem{survey} R. Egan, I. S. Kotsireas, S. London and P. \'O Cath\'ain, \href{https://arxiv.org/html/2610.27175v2#S4.T5}{Recent progress in the construction of Hadamard matrices}, arXiv:2610.27175v2, 2026, Table 5.
+\bibitem{math74} Math74, \href{https://www.math74.com/Hadamard/unknown.html}{List of unknown Hadamard orders}, version 60, November 2026.
+\bibitem{kumar} Kishan, \href{https://github.com/vatskishan03/Hadamard/blob/d885022144ba6bf4efa8315e14871a3736947527/FRONTIER.md}{New Hadamard matrices}, repository revision \texttt{d885022}; \href{https://generalised.si/research/skew-symmetric-hadamard}{historical comparison and conference matrix credit}.
+\bibitem{yamada} M. Yamada, \href{https://doi.org/10.1017/S144678870003086X}{Some new series of Hadamard matrices}, \emph{Journal of the Australian Mathematical Society, Series A} \textbf{46} (1989), 371--383.
+\bibitem{propus} J. Seberry and N. A. Balonin, \href{https://ajc.maths.uq.edu.au/pdf/69/ajc_v69_p349.pdf}{Two infinite families of symmetric Hadamard matrices}, \emph{Australasian Journal of Combinatorics} \textbf{69} (2017), 349--357.
+\bibitem{chk} R. Craigen, W. Holzmann and H. Kharaghani, \href{https://doi.org/10.1016/S0012-365X(01)00162-5}{Complex Golay sequences: structure and applications}, \emph{Discrete Mathematics} \textbf{252} (2002), 73--89.
+\bibitem{turyn} R. J. Turyn, \href{https://doi.org/10.1016/0097-3165(74)90056-9}{Hadamard matrices, Baumert--Hall units, four-symbol sequences, pulse compression, and surface wave encodings}, \emph{Journal of Combinatorial Theory, Series A} \textbf{16} (1974), 313--333.
+\bibitem{lou} L. Lou, M. Xia and T. Xia, \href{https://doi.org/10.17654/DM021020163}{On T-matrices of order $6m+1$}, \emph{Advances and Applications in Discrete Mathematics} \textbf{21} (2019), 163--181.
+\bibitem{miyamoto} M. Miyamoto, \href{https://www.sciencedirect.com/science/article/pii/0097316591900085}{A construction of Hadamard matrices}, \emph{Journal of Combinatorial Theory, Series A} \textbf{57} (1991), 86--108.
+\bibitem{karoui} A. Karoui, \href{https://arxiv.org/abs/2602.16089}{An explicit skew-Hadamard matrix of order 1252 via cyclotomic unions}, arXiv:2602.16089, 2026.
+\bibitem{sy90} J. Seberry and M. Yamada, \href{https://documents.uow.edu.au/~jennie/WEBPDF/139_1990.pdf}{On the products of Hadamard matrices, Williamson matrices and other orthogonal matrices using M-structures}, \emph{Journal of Combinatorial Mathematics and Combinatorial Computing} \textbf{7} (1990), 97--137.
+\bibitem{mathrules} Math74, \href{https://www.math74.com/Hadamard/notation.html}{Construction notation and rules}, version 60, November 2026.
+\bibitem{xxs} M. Xia, T. Xia and J. Seberry, \href{https://documents.uow.edu.au/~jennie/WEBPDF/2005_06.pdf}{An infinite family of Goethals--Seidel arrays}, \emph{Discrete Applied Mathematics} \textbf{145} (2005), 498--504.
+\bibitem{kantor} W. M. Kantor, \href{https://darkwing.uoregon.edu/~kantor/PAPERS/AutHadMat.pdf}{Automorphism groups of Hadamard matrices}, \emph{Journal of Combinatorial Theory} \textbf{6} (1969), 279--281.
+\bibitem{quaternion} M. Yamada, \href{https://doi.org/10.1016/0012-365X(91)90048-7}{Hadamard matrices of generalized quaternion type}, \emph{Discrete Mathematics} \textbf{87} (1991), 187--196.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,22 @@
+# Final release audit
+
+Three process-separated AI reviewers worked from the completed-matrix draft of November 25, 2026. Its archive SHA-256 was `5755efe95c5647904aebe95236b9e41d26d6088f1f96bdb27e20a3a30fe755aa`. The mathematical reviewer inspected the proof and its parameter cases. The numerical reviewer worked in a fresh extraction and executed the documented commands sequentially. A third reviewer checked source attribution. This record describes the changes incorporated into candidate 0.1.0. Independent human expert review remains outstanding.
+
+| Claim | Audit evidence and disposition |
+|---|---|
+| Symmetric two-block substitution | Checked the three invariant subspaces, commutation, the identity for the paired blocks, and the decrease of exactly two in the squared sum. The order-eight array preserves the signs and Gram conditions. |
+| Skew-core and quaternion extension | Reconstructed the coefficient relations from the seven oriented triples. The opposite diagonal representation is the transpose conjugated by the sign diagonal. The two skew sign tables satisfy the required mixed-term identities. The chosen Paley orbit ordering gives the stated left quaternion representation. |
+| 7516, 14556 and 16012 | Rebuilt all three packed matrices from the distributed inputs. Each matched byte for byte. Read each packed file independently of its builder and checked all unordered row pairs, diagonal norms, length and padding. The alternate 7516 construction reproduced its distinct recorded hash and passed the full row checks. Equivalence of the two 7516 matrices remains undetermined. |
+| 30068 and 58228 | Verified the respective input orders 7516 and 14556 and the primes 7517 and 14557. Both primes are 1 modulo 4, as required by Miyamoto. |
+| 64012 | Checked binary Golay length 4000 and the transfer prime 16001. The preceding published corollary already implies this order and 16012. |
+| 80092 | Checked the order-1252 skew seed, the Paley parameter 5003 and the transfer prime 20021. A missing TeX row separator had put the two rows of the bordering formula on one line. Corrected and inspected the displayed two-by-two block matrix. Its Gram is 1252 times the identity. |
+| Attribution and historical priority | Corrected the attribution of the order-118 data, two article titles and the order of the authors in the Lou citation. Added Turyn’s original product reference. The two length-ten sign words are verified directly. Scope and outstanding references are in the [priority review](evidence/PRIOR-WORK.md). |
+| Third-party terms and archive | Included Kishan’s upstream Apache license and the pinned provenance of the unchanged seed. The original work uses GPL-3.0-only, following the preceding release. The candidate contains only the completed-matrix study. |
+
+The row verifiers rejected truncated files, trailing bytes, invalid padding and a flipped sign. The single-bit control gave inner product −2. A separate, direct signed-entry implementation reproduced 78 selected diagonal and off-diagonal Gram entries on each of the four matrices, including rows on both sides of tile boundaries. The [sample checker](audit/sample-entries.mjs) accepts the working directory produced by the [full reproduction commands](evidence/CERTIFICATES.md).
+
+## November 25 source rescan
+
+The search included the November survey, Math74’s order table, Kumar’s public frontier, arXiv, Hexagon, public GitHub code and repositories, and Zenodo. GitHub code searches for “1879 Hadamard” and “Egan Kotsireas London Hadamard”, the repository query “Hadamard 7516”, and the Zenodo records query “Hadamard” with “7516”, “14556” or “16012” yielded no competing construction in the returned results. The Math74 table and the November survey are affirmative evidence of a documented gap at 7516. The survey stops below the two larger principal orders. [Survey, Table 5](https://arxiv.org/html/2610.27175v2#S4.T5) · [Math74, 7001–8000](https://www.math74.com/Hadamard/07/index.html)
+
+The citation reviewer screened OpenAlex citing-work titles and available abstracts for Miyamoto (32 titles, 19 abstracts), Craigen–Holzmann–Kharaghani (80 and 59), and Yamada on quaternion-type matrices (9 and 2). None identified an earlier construction at the target orders under their exact order and quarter-order terms. The Handbook cell for 4003 and the full hypotheses of Lou, Xia and Xia remain unverified. The candidate makes a census-relative claim for 7516 and leaves the larger priority comparisons open. [Detailed comparison](evidence/PRIOR-16012.md)
