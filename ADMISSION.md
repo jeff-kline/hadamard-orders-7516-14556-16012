@@ -2,7 +2,7 @@
 
 Current verdict: NOT YET ADMITTED.
 
-**Version 0.1.0 is a local release candidate.** The intended repository is `jeff-kline/hadamard-orders-7516-14556-16012` and the proposed tag is `v0.1.0`. [Paper](paper/main.pdf) · [Audit](AUDIT.md)
+**Version 0.1.0 is a release candidate.** The repository is [jeff-kline/hadamard-orders-7516-14556-16012](https://github.com/jeff-kline/hadamard-orders-7516-14556-16012) and the proposed tag is `v0.1.0`. [Paper](paper/main.pdf) · [Audit](AUDIT.md)
 
 | Gate | Candidate finding |
 |---|---|

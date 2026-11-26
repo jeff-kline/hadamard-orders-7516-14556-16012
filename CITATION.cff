@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Please cite the paper and identify the version used."
 type: software
-title: "Hadamard matrices of orders 7516, 14556 and 16012"
+title: "A Hadamard matrix of order 7516 and constructions at 14556 and 16012"
 version: "0.1.0"
 authors:
   - family-names: Kline

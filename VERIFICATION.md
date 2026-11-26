@@ -24,7 +24,7 @@ The audit used Apple Clang 21.0.0 and Node.js 24.22.3 on x86-64. The four larger
 
 ## Rebuild the paper
 
-From the release root, run the following commands. The Makefile sets the timestamp and runs pdfLaTeX twice. With pdfTeX 1.40.22 (TeX Live 2021), the five-page PDF has SHA-256 `4c1dd2de418e230cbcc9774949350255576f991e8697c1ee3d69c6b5dc457bf1`.
+From the release root, run the following commands. The Makefile sets the timestamp and runs pdfLaTeX twice. With pdfTeX 1.40.22 (TeX Live 2021), the six-page PDF has SHA-256 `79f5e7c8bec3063d022b49fd18fe83c5aaa1c7d0ee65a99aaa48a2b2219eddb1`.
 
 ```sh
 make paper
