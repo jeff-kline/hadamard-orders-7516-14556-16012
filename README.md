@@ -1,6 +1,8 @@
 # A Hadamard matrix of order 7516 and constructions at 14556 and 16012
 
-**Release candidate 0.1.0, November 25, 2026.** [Paper PDF](paper/main.pdf) · [LaTeX source](paper/main.tex) · [Certificates and reproduction instructions](evidence/CERTIFICATES.md)
+**Status: version 0.1.0 admitted November 26, 2026.** Cite the [version DOI](https://doi.org/10.5281/zenodo.24549453) for [release v0.1.0](https://github.com/jeff-kline/hadamard-orders-7516-14556-16012/releases/tag/v0.1.0). The [concept DOI](https://doi.org/10.5281/zenodo.24549452) follows the latest version. Admission records the project’s review and archive checks. Independent expert peer review remains outstanding. [Admission record](ADMISSION.md)
+
+[Paper PDF](paper/main.pdf) · [LaTeX source](paper/main.tex) · [Certificates and reproduction instructions](evidence/CERTIFICATES.md)
 
 We construct a real Hadamard matrix of order **7516**, an order listed as open in the November 3 survey of Egan, Kotsireas, London and Ó Catháin. Replacing two blocks in Seberry and Yamada’s array gives a weighing matrix of order 1880 and weight 1878. Our November 24 transfer theorem takes it to order 7516. A quaternion extension gives order **14556**, half the order of a known construction at the same odd part. For **16012** we give an explicit matrix covered by our earlier Golay corollary. Every row inner product has been checked in all three matrices. [Survey, Table 5](https://arxiv.org/html/2610.27175v2#S4.T5) · [Our transfer theorem](https://doi.org/10.5281/zenodo.24519197)
 
@@ -47,7 +49,7 @@ From the repository root, run `make verify` to check the stored matrices and inp
 
 ## Release and reuse
 
-The [audit record](AUDIT.md) gives the mathematical and numerical checks and the remaining priority questions. The [verification record](VERIFICATION.md) describes how to reproduce the candidate. Original material is distributed under [GPL-3.0-only](LICENSE). The conference seed carries its upstream [Apache license and attribution](THIRD-PARTY.md). [Citation metadata](CITATION.cff) · [Correction policy](CORRECTIONS.md)
+The [audit record](AUDIT.md) gives the mathematical and numerical checks and the remaining priority questions. The [verification record](VERIFICATION.md) describes how to reproduce the release. Original material is distributed under [GPL-3.0-only](LICENSE). The conference seed carries its upstream [Apache license and attribution](THIRD-PARTY.md). [Citation metadata](CITATION.cff) · [Correction policy](CORRECTIONS.md)
 
 ## Role of AI
 

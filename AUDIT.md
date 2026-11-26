@@ -30,3 +30,7 @@ The rescan covered arXiv’s latest 25 Hadamard-title submissions, Hexagon, Zeno
 The predecessor GitHub Release was published at 01:42:31 UTC on November 25, or 7:42:31 p.m. on November 24 in Chicago. The manuscript uses the latter date for the transfer theorem. Zenodo records November 25. [GitHub release metadata](https://api.github.com/repos/jeff-kline/hadamard-orders-5164-and-8332/releases/tags/v0.1.0) · [Zenodo version record](https://zenodo.org/records/24519197)
 
 The revised paper gives a reproducible choice of the skew sign tables and states the Paley-input corollary. The pinned frontier screen reproduces 120 input rows, two that pass the prime test, and one with an admissible core order. The numerical replay regenerated order 14556 byte for byte, verified the coefficient identities and their negative controls, and checked all 625 correlations in Karoui’s input. These results agree with the earlier certificate audit. [Frontier screen](evidence/FRONTIER-SCREEN.md) · [Verification](VERIFICATION.md)
+
+## Admission, November 26, 2026
+
+The public GitHub tag resolves to the reviewed commit. The version DOI resolves to the open Zenodo record. The archived-state audit passed all 11 checks, including byte identity of the independently downloaded ZIP and the internal manifest. The deployed website listing links to this repository and version DOI. [Verification and checksums](VERIFICATION.md) · [Version record](https://doi.org/10.5281/zenodo.24549453) · [Admission verdict](ADMISSION.md)

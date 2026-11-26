@@ -3,6 +3,8 @@ message: "Please cite the paper and identify the version used."
 type: software
 title: "A Hadamard matrix of order 7516 and constructions at 14556 and 16012"
 version: "0.1.0"
+doi: "10.5281/zenodo.24549453"
+date-released: 2026-11-26
 authors:
   - family-names: Kline
     given-names: Jeffery
